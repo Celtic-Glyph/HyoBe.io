@@ -1,0 +1,153 @@
+/* styles.css */
+
+/* General header styles */
+header {
+    height: 250px; /* Adjust this based on your preference */
+    background-color: #333; /* Dark background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center */
+    align-items: center; /* Horizontally center */
+    text-align: center;
+    position: relative; /* So the blurry ball can move within the header */
+}
+
+/* Style the moving blurry ball */
+.blurry-ball {
+    position: absolute;
+    width: 40px; /* Adjust size */
+    height: 40px; /* Adjust size */
+    background-color: rgba(0, 0, 0, 0.6); /* Dark color with some transparency */
+    border-radius: 50%; /* Make it circular */
+    filter: blur(10px); /* Apply blur */
+    pointer-events: none; /* Prevent the ball from interfering with mouse events */
+    transition: transform 0.1s ease; /* Smooth follow effect */
+}
+
+/* Header text styles */
+header h1 {
+    font-family: 'Trade Winds', cursive;
+    font-size: 2.5rem; /* Adjust based on preference */
+    color: white;
+    margin: 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: white;
+    margin-top: 0.5rem;
+}
+
+header img {
+    width: 100px; /* Adjust based on preference */
+    height: 100px; /* Adjust based on preference */
+    border-radius: 50%;
+    margin-top: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure the body takes full height */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: 0.8rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    color: white;
+    margin: 0 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #c3bdfd;
+}
+
+main {
+    padding: 3rem 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+/* Apply the Finger Paint font specifically to the Welcome to HyoBe header */
+main h2 {
+    font-family: 'Finger Paint', cursive; /* Apply Finger Paint font */
+    font-size: 2.5rem; /* Adjust font size */
+    margin-bottom: 1rem;
+    color: #852d15; /* Keep the color */
+}
+
+/* Other general styles remain unchanged */
+
+main p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.button {
+    display: inline-block;
+    background: linear-gradient(135deg, #6b46c1, #805ad5);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background: linear-gradient(135deg, #805ad5, #6b46c1);
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: translateY(0);
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    header img {
+        width: 100px;
+        height: 100px;
+    }
+    main {
+        padding: 2rem 1rem;
+    }
+    main h2 {
+        font-size: 1.8rem;
+    }
+    main p {
+        font-size: 1rem;
+    }
+}
