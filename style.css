@@ -12,18 +12,6 @@ header {
     position: relative; /* So the blurry ball can move within the header */
 }
 
-/* Style the moving blurry ball */
-.blurry-ball {
-    position: absolute;
-    width: 40px; /* Adjust size */
-    height: 40px; /* Adjust size */
-    background-color: rgba(0, 0, 0, 0.6); /* Dark color with some transparency */
-    border-radius: 50%; /* Make it circular */
-    filter: blur(10px); /* Apply blur */
-    pointer-events: none; /* Prevent the ball from interfering with mouse events */
-    transition: transform 0.1s ease; /* Smooth follow effect */
-}
-
 /* Header text styles */
 header h1 {
     font-family: 'Trade Winds', cursive;
@@ -33,8 +21,12 @@ header h1 {
 }
 
 header p {
-    font-size: 1.2rem;
-    color: white;
+	color: white;
+    font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	font-weight: normal;
+	font-style: normal;
+    font-size: 1.1rem;
     margin-top: 0.5rem;
 }
 
@@ -48,6 +40,8 @@ header img {
 
 /* Ensure the body takes full height */
 body {
+	transition: opacity 1s ease-in-out; /* Apply transition on opacity */
+    opacity: 1;
     margin: 0;
     padding: 0;
     height: 100%;
@@ -55,27 +49,36 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+.page-hidden {
+    opacity: 0;
+}
 
 
 nav {
     display: flex;
     justify-content: center;
-    background-color: #444;
+    background-color: #0a5d6f;
     padding: 0.8rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* <uniquifier>: Use a unique and descriptive class name */
+/* <weight>: Use a value from 1 to 1000 */
+
 nav a {
+	font-family: "Ysabeau SC", serif;
+	font-optical-sizing: auto;
     color: white;
     margin: 0 1.5rem;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
+	font-style: normal;
     transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #c3bdfd;
+    color: #121410;
 }
 
 main {
@@ -95,6 +98,10 @@ main h2 {
 /* Other general styles remain unchanged */
 
 main p {
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	font-weight: normal;
+	font-style: normal;
     font-size: 1.1rem;
     color: #555;
     line-height: 1.6;
@@ -102,20 +109,25 @@ main p {
     margin: 0 auto 2rem;
 }
 
+
+
 .button {
     display: inline-block;
-    background: linear-gradient(135deg, #6b46c1, #805ad5);
+    background: linear-gradient(135deg, #09809d, #047894);
     color: white;
     padding: 0.8rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
+	font-family: "Kanit", serif;
+	font-weight: 600;
+	font-style: normal;
     font-size: 1.1rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .button:hover {
-    background: linear-gradient(135deg, #805ad5, #6b46c1);
+    background: linear-gradient(135deg, #126a80, #0a3d6f);
     transform: translateY(-2px);
 }
 
@@ -124,11 +136,14 @@ main p {
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #1e1e1e;
+    font-family: "Kanit", serif;
+	font-weight: 500;
+	font-style: normal;
+    font-size: 1rem;
+	color: white;
     text-align: center;
     padding: 1rem 0;
-    font-size: 0.9rem;
 }
 
 /* Mobile responsiveness */
@@ -150,4 +165,52 @@ footer {
     main p {
         font-size: 1rem;
     }
+}
+
+/* Main layout adjustments for left-right alignment */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 2rem auto;
+    max-width: 1200px;
+    padding: 0 1rem;
+    gap: 2rem;
+}
+
+/* Main content */
+main {
+    flex: 3;
+    text-align: left; /* Ensure left alignment for general main content */
+}
+
+/* Specific support sections */
+.support-email, .discord-support {
+    text-align: left; /* Explicitly left-align these sections */
+    margin: 1rem 0;
+}
+
+.support-email p, .discord-support p {
+    margin: 0; /* Remove unnecessary top or bottom spacing */
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Links styling for support sections */
+.support-email a, .discord-support a {
+    color: #0077cc; /* Adjust link color */
+    text-decoration: none; /* Remove underline for a cleaner look */
+    font-weight: bold;
+}
+
+.support-email a:hover, .discord-support a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.commands ul, .commands li {
+	font-family: "Montserrat", serif;
+	font-optical-sizing: auto;
+	font-weight: normal;
+	font-style: normal;
+    font-size: 1.1rem;
+    color: #555;
 }
